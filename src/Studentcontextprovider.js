@@ -1,4 +1,5 @@
  import react,{ createContext,useState,useContext } from "react";
+import { use } from "react";
 
  const studentcontext=createContext();
  export const useStudent=()=>
@@ -17,8 +18,10 @@
     const [studentlist,setstudentlist]=useState(dummydata);
     const [currentindex,setcurrentindex]=useState(0);
     const [searcvalue,setsearchvalue]=useState('');
+    const [update,setisupdate]=useState(false);
+    
     return(
-      <studentcontext.Provider value={{studentlist,setstudentlist,currentindex,setcurrentindex,searcvalue,setsearchvalue}}>
+      <studentcontext.Provider value={{studentlist,setstudentlist,currentindex,setcurrentindex,searcvalue,setsearchvalue,setisupdate}}>
       {children}
       </studentcontext.Provider>
     )

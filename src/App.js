@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import StudentListView from "./StudentListView";
-import Studentcontextprovider from "./Studentcontextprovider";
+import Studentcontextprovider, { useStudent } from "./Studentcontextprovider";
 import DeatilsView from "./StudentDeatilsView";
 import CreateStudent from "./CreateStudent";
 import UpdateStudent from "./UpdateStudent";
 import Navigation from './Navigation'
 import Deletstudent from "./Deletstudent";
-
+ 
 export default function App() {
+ 
   return (
     <>
     <Navigation/>

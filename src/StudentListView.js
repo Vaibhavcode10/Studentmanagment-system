@@ -8,6 +8,7 @@ export default function StudentListView() {
   const handleDelete = (index) => {
     const newStudentList = studentlist.filter((_, i) => i !== index);
     setstudentlist(newStudentList);
+    alert("Student record deleted")
   };
 
   return (
@@ -30,7 +31,7 @@ export default function StudentListView() {
                       justifyContent: "space-between",
                       alignItems: "center",
                       padding: "5px 0",
-                      borderBottom: "1px solid #ddd"
+                      borderBottom: "1px solid #ddd",
                     }}
                   >
                     <p
@@ -40,12 +41,22 @@ export default function StudentListView() {
                       {item.name}
                     </p>
 
-                    <button
-                      onClick={() => handleDelete(index)}
-                      className="btn btn-danger btn-sm"
-                    >
-                      Delete
-                    </button>
+                    <div style={{ display: "flex", gap: "10px", marginLeft: "auto" }}>
+                      <button
+                        onClick={() => handleDelete(index)}
+                        className="btn btn-danger btn-sm"
+                        style={{ flex: 1 }}
+                      >
+                        Delete
+                      </button>
+
+                      <button
+                        className="btn btn-primary btn-sm"
+                        style={{ flex: 1 }}
+                      >
+                  Update  
+                      </button>
+                    </div>
                   </div>
                 ))}
               </td>
