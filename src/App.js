@@ -21,12 +21,10 @@ export default function App() {
               <div className="container-fluid">
                 <h1 className="text-center my-4">Student Management System</h1>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-md-12">
                     <StudentListView />
                   </div>
-                  <div className="col-md-6">
-                    <DeatilsView />
-                  </div>
+                
                 </div>
               </div>
             }

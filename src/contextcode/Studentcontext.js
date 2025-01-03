@@ -13,13 +13,15 @@ const dummyStudents = [
 export function StudentsProvider({ children }) {
   const [studentList, setStudentList] = useState(dummyStudents);
   const [selectedStudentIndex, setSelectedStudentIndex] = useState(0);
-
+    const [updatestudent, setupdatestudent] = React.useState({ name: '', roll: '', sub: '', percentage: '' });
   return (
     <StudentsContext.Provider
       value={{
         studentList,
         selectedStudentIndex,
         setSelectedStudentIndex,
+        updatestudent,
+        setupdatestudent
       }}
     >
       {children}

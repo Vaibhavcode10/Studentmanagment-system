@@ -1,12 +1,10 @@
 import React from "react";
 import { useStudent } from "./Studentcontextprovider";
-
+import { useEffect } from "react";
 export default function UpdateStudent() {
   const { studentlist, setstudentlist, currentindex, setcurrentindex } = useStudent();
   const [updatestudent, setupdatestudent] = React.useState({ name: '', roll: '', sub: '', percentage: '' });
-
-
-  React.useEffect(() => {
+  useEffect(() => {
     if (currentindex !== null) {
       setupdatestudent(studentlist[currentindex]);
     }
@@ -22,7 +20,7 @@ export default function UpdateStudent() {
     updatedList[currentindex] = updatestudent; 
     setstudentlist(updatedList);
     setupdatestudent({ name: '', roll: '', sub: '', percentage: '' });
-    setcurrentindex(null);  
+    setcurrentindex(0);  
   };
 
   if (currentindex === null) {
@@ -30,7 +28,7 @@ export default function UpdateStudent() {
   }
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-0">
       <div className="card shadow p-4">
         <h2 className="text-center mb-4">Update Student</h2>
         <form>
