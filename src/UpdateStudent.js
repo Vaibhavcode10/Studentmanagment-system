@@ -19,14 +19,11 @@ export default function UpdateStudent() {
     const updatedList = [...studentlist];
     updatedList[currentindex] = updatestudent; 
     setstudentlist(updatedList);
-    setupdatestudent({ name: '', roll: '', sub: '', percentage: '' });
+    setupdatestudent({ name: '', roll: '', sub: '', percentage: '',m1:'',m2:'',m3:''});
     setcurrentindex(0);  
   };
 
-  if (currentindex === null) {
-    return <div className="container mt-5">Select a student to update.</div>;
-  }
-
+ 
   return (
     <div className="container mt-0">
       <div className="card shadow p-4">
@@ -59,6 +56,36 @@ export default function UpdateStudent() {
               id="sub"
               className="form-control"
               value={updatestudent.sub}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="sub" className="form-label">M1</label>
+            <input
+              type="text"
+              id="m1"
+              className="form-control"
+              value={updatestudent.m1}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="sub" className="form-label">M2</label>
+            <input
+              type="text"
+              id="m2"
+              className="form-control"
+              value={updatestudent.m2}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="sub" className="form-label">M3</label>
+            <input
+              type="text"
+              id="m3"
+              className="form-control"
+              value={updatestudent.m3}
               onChange={handleChange}
             />
           </div>
