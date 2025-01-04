@@ -7,10 +7,10 @@ import { use } from "react";
   return  useContext(studentcontext);
  }
  const dummydata=[
-  {name:'vaibhav',roll:101,sub:92,percentage:90,m1:"88",m2:"99",m3:"76"},
-  {name:'sagar',roll:102,sub:82,percentage:80,m1:"78",m2:"76",m3:"86"},
-  {name:'pratik',roll:104,sub:87,percentage:70,m1:"88",m2:"82",m3:"72"},
-  {name:'prem',roll:105,sub:76,percentage:70,m1:"87",m2:"97",m3:"95"},
+  {name:'vaibhav',roll:10,sub:92,m1:"88",m2:"99",m3:"76",total:"",percentage:90},
+  {name:'sagar',roll:11,sub:82,m1:"78",m2:"76",m3:"86",total:"",percentage:90},
+  {name:'pratik',roll:12,sub:87,m1:"88",m2:"82",m3:"72",total:"",percentage:90},
+  {name:'prem',roll:13,sub:76,m1:"87",m2:"97",m3:"95",total:"",percentage:90},
 ];
    
   export default function Studentcontextprovider({children})

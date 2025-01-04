@@ -22,12 +22,11 @@ export default function UpdateStudent() {
     setupdatestudent({ name: '', roll: '', sub: '', percentage: '',m1:'',m2:'',m3:''});
     setcurrentindex(0);  
   };
-
  
   return (
-    <div className="container mt-0">
+    <div className="container-fluid w-100 mt-0" style={{overflow:'hidden'}}>
       <div className="card shadow p-4">
-        <h2 className="text-center mb-4">Update Student</h2>
+        <h2 className="text-center mb-4" style={{fontFamily:'monospace'}}>Update Student</h2>
         <form>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
@@ -37,7 +36,9 @@ export default function UpdateStudent() {
               className="form-control"
               value={updatestudent.name}
               onChange={handleChange}
+              style={{color:updatestudent.name.length>10?'red':'green'}}
             />
+            {updatestudent.name.length>10?<p style={{color:"red"}}>text shoud be less than 10 char</p>:null}
           </div>
           <div className="mb-3">
             <label htmlFor="roll" className="form-label">Roll</label>
@@ -47,57 +48,54 @@ export default function UpdateStudent() {
               className="form-control"
               value={updatestudent.roll}
               onChange={handleChange}
+              style={{color:updatestudent.roll>50?'red':'green'}}
             />
+            {updatestudent.roll>50?<p style={{color:"red"}}>Enter correct roll</p>:null}
           </div>
           <div className="mb-3">
-            <label htmlFor="sub" className="form-label">Subject</label>
+            <label htmlFor="sub" className="form-label">English</label>
             <input
               type="text"
               id="sub"
               className="form-control"
               value={updatestudent.sub}
               onChange={handleChange}
-            />
+              style={{color: updatestudent.sub > 100 ? 'red' : (updatestudent.sub > 35 ? 'green' : 'red')}}            />
+            {updatestudent.sub>100?<p style={{color:"red"}}>Marks must be less than 100</p>:null}
           </div>
           <div className="mb-3">
-            <label htmlFor="sub" className="form-label">M1</label>
+            <label htmlFor="sub" className="form-label">Math</label>
             <input
               type="text"
               id="m1"
               className="form-control"
               value={updatestudent.m1}
               onChange={handleChange}
-            />
+              style={{color: updatestudent.m1 > 100 ? 'red' : (updatestudent.m1 > 35 ? 'green' : 'red')}}            />
+                {updatestudent.m1>100?<p style={{color:"red"}}>Marks must be less than 100</p>:null}
           </div>
           <div className="mb-3">
-            <label htmlFor="sub" className="form-label">M2</label>
+            <label htmlFor="sub" className="form-label">Physics</label>
             <input
               type="text"
               id="m2"
               className="form-control"
               value={updatestudent.m2}
               onChange={handleChange}
-            />
+              style={{color: updatestudent.m2 > 100 ? 'red' : (updatestudent.m2 > 35 ? 'green' : 'red')}}            />
+                {updatestudent.m2>100?<p style={{color:"red"}}>Marks must be less than 100</p>:null}
           </div>
-          <div className="mb-3">
-            <label htmlFor="sub" className="form-label">M3</label>
+          <div className="mb-4">
+            <label htmlFor="sub" className="form-label">Chemistry</label>
             <input
               type="text"
               id="m3"
               className="form-control"
               value={updatestudent.m3}
               onChange={handleChange}
+              style={{color: updatestudent.m3 > 100 ? 'red' : (updatestudent.m3 > 35 ? 'green' : 'red')}}
             />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="percentage" className="form-label">Percentage</label>
-            <input
-              type="number"
-              id="percentage"
-              className="form-control"
-              value={updatestudent.percentage}
-              onChange={handleChange}
-            />
+                {updatestudent.m3>100?<p style={{color:"red"}}>Marks must be less than 100</p>:null}
           </div>
           <button type="submit" className="btn btn-primary w-100" onClick={handleSubmit}>Update Student</button>
         </form>

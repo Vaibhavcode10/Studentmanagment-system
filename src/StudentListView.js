@@ -34,12 +34,12 @@ export default function StudentListView() {
             <table className="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th>Student List</th>
+                  <th style={{fontFamily:'monospace'}}>Student List</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
+                  <td style={{fontFamily:'monospace'}}>
                     {studentlist.map((item, index) => (
                       <div
                         key={index}
@@ -97,7 +97,7 @@ export default function StudentListView() {
             <p>No student data to display</p>
           )}
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6" style={{ padding: "0 20px" }}>
        {toggle?<StudentDeatilsView/>:<UpdateStudent />}
         </div>
       </div>

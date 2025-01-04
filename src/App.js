@@ -19,7 +19,7 @@ export default function App() {
             path="/"
             element={
               <div className="container-fluid">
-                <h1 className="text-center my-4">Student Management System</h1>
+                <h1 className="text-center my-4" style={{fontFamily:'monospace'}}>Student Management System</h1>
                 <div className="row">
                   <div className="col-md-12">
                     <StudentListView />
