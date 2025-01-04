@@ -12,6 +12,7 @@ export default function CreateStudent() {
       setnewstudent({name:'',roll:'',sub:'',percentage:''});
    }
   return (
+     // lets add more data
     <div className="container mt-5">
       <div className="card shadow p-4">
         <h2 className="text-center mb-4">Create Student</h2>
