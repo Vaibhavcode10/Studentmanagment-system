@@ -35,12 +35,7 @@ export default function StudentDeatilsView() {
                       {student.roll}
                     </td>
                   </tr>
-                  <tr>
-                    <th>English</th>
-                    <td style={{ color: student.sub > 100 ? "red" : "green" }}>
-                      {student.sub}
-                    </td>
-                  </tr>
+              
                   <tr>
                     <th>Math</th>
                     <td style={{ color: student.m1 > 100 ? "red" : "green" }}>
@@ -54,7 +49,7 @@ export default function StudentDeatilsView() {
                     </td>
                   </tr>
                   <tr>
-                    <th>English</th>
+                    <th>Chemistry</th>
                     <td style={{ color: student.m1 > 100 ? "red" : "green" }}>
                       {student.m3}
                     </td>
@@ -65,21 +60,22 @@ export default function StudentDeatilsView() {
                       {
                         (student.total =
                           Number(student.m1) +
-                          Number(student.m1) +
-                          Number(student.m1))
+                          Number(student.m2) +
+                          Number(student.m3))
                       }
                     </td>
                   </tr>
                   <tr>
                     <th>Percentage</th>
+                    
                     <td style={{ color: student.percentage > 100 || student.percentage < 35 ? "red" : "green" }}>
-                    {(student.percentage = Number(student.total) / 3)}
+                    {(student.percentage = Number(student.total) / 3).toFixed(2)}%
                     </td>
                   </tr>
                   <tr>
                     <th>Result:</th>
-                    <td  style={{ color: student.percentage > 35 ? "green" : "red" }}>
-                      {student.percentage > 35 ? "Pass" : "Fail"}
+                    <td  style={{ color: student.percentage > 35 && student.m1> 35 && student.m2>35  && student.m3 > 35 ?  "green" : "red" }}>
+                      {student.m1> 35 && student.m2>35  && student.m3 > 35 ? "Pass" : "Fail"}
                     </td>
                   </tr>
                 </tbody>

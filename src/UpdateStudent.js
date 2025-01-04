@@ -52,17 +52,7 @@ export default function UpdateStudent() {
             />
             {updatestudent.roll>50?<p style={{color:"red"}}>Enter correct roll</p>:null}
           </div>
-          <div className="mb-3">
-            <label htmlFor="sub" className="form-label">English</label>
-            <input
-              type="text"
-              id="sub"
-              className="form-control"
-              value={updatestudent.sub}
-              onChange={handleChange}
-              style={{color: updatestudent.sub > 100 ? 'red' : (updatestudent.sub > 35 ? 'green' : 'red')}}            />
-            {updatestudent.sub>100?<p style={{color:"red"}}>Marks must be less than 100</p>:null}
-          </div>
+        
           <div className="mb-3">
             <label htmlFor="sub" className="form-label">Math</label>
             <input
